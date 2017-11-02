@@ -1,0 +1,52 @@
+<resources>
+
+    <!-- common -->
+    <string name="app_name">福利2</string>
+    <string name="press_again_exit">再按一次退出</string>
+    <string name="confirm">确定</string>
+    <!--权限-->
+    <string name="premission_title">授权管理</string>
+    <string name="premisssion_notice">应用所需权限被拒绝，为保证您能正常使用应用,请允许授权</string>
+    <string name="premission_to_setting">应用所需权限被拒绝，请到设置中开启</string>
+    <!--底部tab-->
+    <string name="tab_single_and_double">单双夺宝</string>
+    <string name="tab_big_and_small">大小夺宝</string>
+    <string name="tab_rank">榜单</string>
+    <string name="tab_service_center">客服</string>
+    <string name="tab_mine">我的</string>
+
+    <!-- Components 系列界面 -->
+
+    <!-- EmptyViewFragment 空界面展示界面 -->
+
+    <!-- TabSegmentFragment 选项卡展示界面 -->
+
+    <!-- ProgressBarFragment 进度条展示界面 -->
+
+    <!-- PopupFragment 浮层展示界面 -->
+
+    <!-- LinkTextView 展示界面 -->
+
+    <!-- SpanTouchFixTextView -->
+
+    <!-- PullRefreshView -->
+
+
+    <!-- Helper 系列界面 -->
+
+    <!-- ColorHelper 颜色工具 -->
+
+    <!-- DeviceHelper 设备检测工具 -->
+
+    <!-- DrawableHelper Drawable 工具 -->
+
+    <!-- StatusBarHelper 状态栏工具 -->
+
+    <!-- Span Utils 各种 Span 工具 -->
+    <!-- ¥相当于&#xA5 -->
+
+    <!-- 其他界面 -->
+
+    <!-- 关于界面 -->
+
+</resources>

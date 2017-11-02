@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- common -->
+    <color name="app_color_blue">#2F2B4C</color>
+    <color name="app_color_blue_disabled">#2F2B4C</color>
+    <color name="app_color_blue_pressed">#2F2B4C</color>
+
+    <color name="tab_unselect">#999999</color>
+    <color name="tab_select">#F85788</color>
+    <color name="tab_bar_bg">#2F2B4C</color>
+</resources>

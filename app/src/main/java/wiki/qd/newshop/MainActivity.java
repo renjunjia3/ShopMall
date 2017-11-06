@@ -17,6 +17,7 @@ public class MainActivity extends SupportActivity {
         if (findFragment(MainFragment.class) == null) {
             loadRootFragment(R.id.fl_container, MainFragment.newInstance());
         }
+
     }
 
     @Override

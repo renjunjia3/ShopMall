@@ -14,6 +14,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <!--配置渠道-->
+        <meta-data
+            android:name="CHANNEL"
+            android:value="${CHANNEL_ID}" />
         <activity
             android:name="wiki.qd.newshop.LauncherActivity"
             android:screenOrientation="portrait">

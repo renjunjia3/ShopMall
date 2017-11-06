@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'org.greenrobot.greendao'
 
 android {
     compileSdkVersion 26
@@ -11,7 +12,11 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         flavorDimensions "versionCode"
     }
-
+    greendao{
+        schemaVersion 1
+        daoPackage 'wiki.qd.newshop.db'
+        targetGenDir 'src/main/java'
+    }
     productFlavors {
         NNY_1004_1004 {
             manifestPlaceholders = [CHANNEL_ID: "1004,1004"]

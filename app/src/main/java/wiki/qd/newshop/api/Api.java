@@ -4,13 +4,35 @@ import java.util.HashMap;
 
 import io.reactivex.Observable;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 import retrofit2.http.QueryMap;
 import wiki.qd.newshop.entity.CommonInfo;
+import wiki.qd.newshop.entity.StateResultInfo;
+import wiki.qd.newshop.entity.UserInfo;
 
 /**
  * 接口
  */
 public interface Api {
+    //公共参数
     @GET("common")
-    Observable<CommonInfo> getCommonInfo(@QueryMap HashMap<String,String> map);
+    Observable<CommonInfo> getCommonInfo(@QueryMap HashMap<String, String> params);
+
+    //注册获取验证码
+    @GET("user/code")
+    Observable<StateResultInfo> getRegisterCode(@QueryMap HashMap<String, String> params);
+
+    //手机号注册
+    @POST("user/reg")
+    Observable<UserInfo> registerByPhone(@QueryMap HashMap<String, String> params);
+
+    //验证验证码
+    @GET("user/check_code")
+    Observable<StateResultInfo> checkCode(@QueryMap HashMap<String, String> params);
+
+    //手机号登录
+    @POST("user/login")
+    Observable<UserInfo> loginByPhone(@QueryMap HashMap<String, String> params);
+
+
 }

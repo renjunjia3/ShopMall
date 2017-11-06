@@ -25,6 +25,7 @@ public class App extends Application {
         ApiConfig.RESOURCE_ID = getResouyceName();
         initLog();
         initNet();
+        initDB();
     }
 
     private void initLog() {
@@ -32,6 +33,10 @@ public class App extends Application {
                 .configAllowLog(true)//是否输出日志
                 .configShowBorders(false);//是否排版显示
         ViseLog.plant(new LogcatTree());//添加打印日志信息到Logcat的树
+    }
+
+    private void initDB() {
+        wiki.qd.newshop.db.dbutil.DaoManager.init(this);
     }
 
     private void initNet() {

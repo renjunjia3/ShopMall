@@ -150,18 +150,28 @@ public class LauncherActivity extends AppCompatActivity {
      */
     @SuppressLint("MissingPermission")
     private String getUUID() {
-        String uuid = "";
+        String uuid;
         try {
             TelephonyManager tm = (TelephonyManager) this.getSystemService(TELEPHONY_SERVICE);
-            uuid = tm.getDeviceId();
-            if (TextUtils.isEmpty(uuid)) {
+            if (tm == null) {
                 uuid = SharedPreferencesUtil.getString(this, UUID_KEY, "");
                 if (uuid.isEmpty()) {
                     String imei = createRandomUUID();
                     SharedPreferencesUtil.putString(this, UUID_KEY, imei);
                     uuid = imei;
                 }
+            } else {
+                uuid = tm.getDeviceId();
+                if (TextUtils.isEmpty(uuid)) {
+                    uuid = SharedPreferencesUtil.getString(this, UUID_KEY, "");
+                    if (uuid.isEmpty()) {
+                        String imei = createRandomUUID();
+                        SharedPreferencesUtil.putString(this, UUID_KEY, imei);
+                        uuid = imei;
+                    }
+                }
             }
+
         } catch (Exception e) {
             e.printStackTrace();
             uuid = SharedPreferencesUtil.getString(this, UUID_KEY, "");
@@ -175,12 +185,12 @@ public class LauncherActivity extends AppCompatActivity {
     }
 
     private String createRandomUUID() {
-        String retStr;
+        StringBuilder retStr;
         String strTable = "1234567890abcdefghijkmnpqrstuvwxyz";
         int len = strTable.length();
         boolean bDone = true;
         do {
-            retStr = "";
+            retStr = new StringBuilder();
             int count = 0;
             for (int i = 0; i < 64; i++) {
                 double dblR = Math.random() * len;
@@ -189,14 +199,14 @@ public class LauncherActivity extends AppCompatActivity {
                 if (('0' <= c) && (c <= '9')) {
                     count++;
                 }
-                retStr += strTable.charAt(intR);
+                retStr.append(strTable.charAt(intR));
             }
             if (count >= 20) {
                 bDone = false;
             }
         } while (bDone);
 
-        return retStr;
+        return retStr.toString();
     }
 
     @Override

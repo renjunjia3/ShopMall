@@ -7,7 +7,7 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application
-        android:name="wiki.qd.newshop.App"
+        android:name="wiki.qd.shopmall.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -19,7 +19,7 @@
             android:name="CHANNEL"
             android:value="${CHANNEL_ID}" />
         <activity
-            android:name="wiki.qd.newshop.LauncherActivity"
+            android:name="wiki.qd.shopmall.LauncherActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,7 +28,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="wiki.qd.newshop.MainActivity"
+            android:name="wiki.qd.shopmall.MainActivity"
             android:screenOrientation="portrait" />
     </application>
 

@@ -9,8 +9,7 @@
     <string name="premisssion_notice">应用所需权限被拒绝，为保证您能正常使用应用,请允许授权</string>
     <string name="premission_to_setting">应用所需权限被拒绝，请到设置中开启</string>
     <!--底部tab-->
-    <string name="tab_single_and_double">单双夺宝</string>
-    <string name="tab_big_and_small">大小夺宝</string>
+    <string name="tab_index">首页</string>
     <string name="tab_rank">榜单</string>
     <string name="tab_service_center">客服</string>
     <string name="tab_mine">我的</string>

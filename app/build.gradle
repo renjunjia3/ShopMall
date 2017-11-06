@@ -4,7 +4,7 @@ apply plugin: 'org.greenrobot.greendao'
 android {
     compileSdkVersion 26
     defaultConfig {
-        applicationId "wiki.qd.newshop"
+        applicationId "wiki.qd.shopmall"
         minSdkVersion 18
         targetSdkVersion 26
         versionCode 1
@@ -14,7 +14,7 @@ android {
     }
     greendao{
         schemaVersion 1
-        daoPackage 'wiki.qd.newshop.db'
+        daoPackage 'wiki.qd.shopmall.db'
         targetGenDir 'src/main/java'
     }
     productFlavors {

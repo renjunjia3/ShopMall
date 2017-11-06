@@ -33,4 +33,10 @@ public class MineFragment extends BaseMainFragment {
     public void onLazyInitView(@Nullable Bundle savedInstanceState) {
         super.onLazyInitView(savedInstanceState);
     }
+
+    @Override
+    public void onDestroyView() {
+
+        super.onDestroyView();
+    }
 }

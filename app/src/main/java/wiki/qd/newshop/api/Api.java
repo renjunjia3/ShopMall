@@ -6,7 +6,7 @@ import io.reactivex.Observable;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.QueryMap;
-import wiki.qd.newshop.entity.CommonInfo;
+import wiki.qd.newshop.entity.CommonResultInfo;
 import wiki.qd.newshop.entity.StateResultInfo;
 import wiki.qd.newshop.entity.UserInfo;
 
@@ -16,7 +16,7 @@ import wiki.qd.newshop.entity.UserInfo;
 public interface Api {
     //公共参数
     @GET("common")
-    Observable<CommonInfo> getCommonInfo(@QueryMap HashMap<String, String> params);
+    Observable<CommonResultInfo> getCommonInfo(@QueryMap HashMap<String, String> params);
 
     //注册获取验证码
     @GET("user/code")

@@ -37,4 +37,19 @@ public class DaoManager {
     public DaoSession getDaoSession() {
         return mDaoSession;
     }
+
+    public void clear() {
+        if (mDaoSession != null) {
+            mDaoSession.clear();
+            mDaoSession = null;
+        }
+    }
+
+    public void close() {
+        clear();
+        if (mySqlLiteOpenHelper != null) {
+            mySqlLiteOpenHelper.close();
+            mySqlLiteOpenHelper = null;
+        }
+    }
 }

@@ -22,7 +22,9 @@ import com.vise.xsnow.permission.PermissionManager;
 
 import wiki.qd.newshop.api.Api;
 import wiki.qd.newshop.common.ApiConfig;
-import wiki.qd.newshop.entity.CommonInfo;
+import wiki.qd.newshop.db.dbmanager.CommonInfoDaoManager;
+import wiki.qd.newshop.db.dbutil.DaoManager;
+import wiki.qd.newshop.entity.CommonResultInfo;
 import wiki.qd.newshop.util.SharedPreferencesUtil;
 
 import static wiki.qd.newshop.common.ApiConfig.UUID_KEY;
@@ -127,11 +129,14 @@ public class LauncherActivity extends AppCompatActivity {
 
     private void getCommonInfo() {
         ViseHttp.RETROFIT().create(Api.class).getCommonInfo(ApiConfig.createParams())
-                .compose(ApiTransformer.<CommonInfo>norTransformer())
-                .subscribe(new ApiCallbackSubscriber<>(new ACallback<CommonInfo>() {
+                .compose(ApiTransformer.<CommonResultInfo>norTransformer())
+                .subscribe(new ApiCallbackSubscriber<>(new ACallback<CommonResultInfo>() {
                     @Override
-                    public void onSuccess(CommonInfo data) {
+                    public void onSuccess(CommonResultInfo data) {
                         ViseLog.e(data.toString());
+                        CommonInfoDaoManager daoManager = new CommonInfoDaoManager();
+                        daoManager.insert(data.getData());
+                        DaoManager.getInstance().close();
                         toMainActivity();
                     }
 

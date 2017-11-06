@@ -2,8 +2,6 @@ package wiki.qd.newshop.db.dbutil;
 
 import java.util.List;
 
-import wiki.qd.newshop.entity.UserInfo;
-
 /**
  * Created by scene on 2017/11/6.
  */

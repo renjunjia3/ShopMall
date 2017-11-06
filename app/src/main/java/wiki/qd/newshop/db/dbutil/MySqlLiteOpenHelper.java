@@ -6,6 +6,7 @@ import android.util.Log;
 
 import org.greenrobot.greendao.database.Database;
 
+import wiki.qd.newshop.db.CommonInfoDao;
 import wiki.qd.newshop.db.DaoMaster;
 import wiki.qd.newshop.db.UserInfoDao;
 
@@ -19,6 +20,7 @@ public class MySqlLiteOpenHelper extends DaoMaster.OpenHelper {
     public void onUpgrade(Database db, int oldVersion, int newVersion) {
         Log.i("lxq", "oldVersion:" + oldVersion + ",newVersion" + newVersion);
         MigrationHelper.getInstance().migrate(db, UserInfoDao.class);
+        MigrationHelper.getInstance().migrate(db, CommonInfoDao.class);
     }
 
 }  
